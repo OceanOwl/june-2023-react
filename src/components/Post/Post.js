@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Post = ({post}) => {
+const Post = ({post, getPostId}) => {
    const {id, title, body} = post;
 
 
@@ -10,6 +10,7 @@ const Post = ({post}) => {
             <div>id:{id}</div>
             <div>title:{title}</div>
             <div>body:{body}</div>
+            <button onClick={()=>getPostId(id)}>get details</button>
         </div>
     );
 };
