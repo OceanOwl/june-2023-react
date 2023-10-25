@@ -8,14 +8,16 @@ const Posts = ({postId}) => {
     const [posts, setPosts] = useState([]);
 
     useEffect(()=>{
-        postService.getByPostId(postId).then(({data})=>setPosts(data))
+        postService.getAll().then(({data})=>setPosts(data))
     },[postId])
 
+    const filter = posts.filter((post)=>post.id===postId);
 
+    console.log(filter);
 
     return (
         <div>
-            {posts.map(post=><Post key={post.id} post={post}/>)}
+            {filter.map(post=><Post key={post.id} post={post}/>)}
         </div>
     );
 };

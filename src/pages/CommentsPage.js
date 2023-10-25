@@ -6,8 +6,8 @@ import {Outlet} from "react-router-dom";
 const CommentsPage = () => {
     return (
         <div>
-            <Comments/>
             <Outlet/>
+            <Comments/>
         </div>
     );
 };
