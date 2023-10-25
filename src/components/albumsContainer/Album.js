@@ -1,12 +1,11 @@
 import React from 'react';
 
-const App = () => {
-
+const Album = () => {
     return (
         <div>
-            App
+            Album
         </div>
     );
 };
 
-export {App};
+export {Album};
