@@ -5,23 +5,26 @@ import {UserPage} from "./pages/UserPage";
 import {UserDetailsPage} from "./pages/UserDetailsPage";
 import {PostPage} from "./pages/PostPage";
 import {PostDetailsPage} from "./pages/PostDetailsPage";
+import {CommentPage} from "./pages/CommentPage";
 
 const router = createBrowserRouter([
     {
         path: '/', element: <MainLayout/>, children: [
             {index: true, element: <Navigate to={'users'}/>},
-            {path: 'users', element: <UserPage/>, children: [
-                    {path: ':userId', element: <UserDetailsPage/>, children:[
+            {
+                path: 'users', element: <UserPage/>, children: [
+                    {
+                        path: ':userId', element: <UserDetailsPage/>, children: [
                             {
                                 path: 'posts', element: <PostPage/>, children: [
-                                    {path: 'postId', element: <PostDetailsPage/>}
+                                    {path: ':postId', element: <PostDetailsPage/>,children:[
+                                            {path:'comments', element:<CommentPage/>}
+                                        ]}
                                 ]
                             }
-                        ]},
-                    // {path: 'posts', element: <PostPage/>, children: [
-                    //         {path: 'postId', element: <PostDetailsPage/>}
-                    //     ]
-                    // },
+                        ]
+                    },
+
                 ]
             },
 

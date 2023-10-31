@@ -11,11 +11,12 @@ const urls = {
     },
     posts:{
         base :posts,
+        postByUserId:(userId)=>`/users/${userId}${posts}`,
         byPostId:(postId)=>`${posts}/${postId}`
     },
     comments:{
         base :comments,
-        byCommentId:(commentId)=>`${comments}/${commentId}`
+        getByPostId:(postId)=>`/posts/${postId}${comments}`
     }
 }
 
